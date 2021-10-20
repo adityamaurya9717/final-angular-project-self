@@ -1,0 +1,19 @@
+<h1 style="text-align:center">Category Form</h1>
+
+<form class="w-50 m-auto border p-2" [formGroup]="categoryForm" (ngSubmit)="addcategory()"> 
+ <mat-form-field appearance="outline">
+    <mat-label>Category Id</mat-label>
+    <input matInput type="number" id="category" formControlName="categoryId" name="categoryid" [(ngModel)]="category.id">
+  </mat-form-field>
+  
+  <mat-form-field appearance="outline">
+    <mat-label>Category Name</mat-label>
+    <input matInput type="text" name="categoryname" formControlName="categoryName" [(ngModel)]="category.categoryname">
+  </mat-form-field>
+   
+  <div style="display: flex;flex-direction: row;justify-content:space-around">
+   <button type="submit" mat-raised-button color="primary" >ADD</button>
+   <button type="button" mat-raised-button color="warn" (click)="clearForm()" >clear</button>
+
+   </div>
+</form>

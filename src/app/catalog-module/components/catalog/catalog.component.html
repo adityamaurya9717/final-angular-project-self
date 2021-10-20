@@ -1,28 +1,30 @@
-<div class="w-75 m-auto">
-    <form (ngSubmit)="addProduct()"> 
+<h1>Add Catalog</h1>
+<div class="w-75 m-auto border p-2">
+    <form id="catalogForm" name="catalogForm"
+        (ngSubmit)="addProduct()"> 
     
-        <div class="form-group">
+        <div class="form-group py-1">
           <label for="productId">product Id</label>
           <input type="number" class="form-control" id="ProductId" [(ngModel)]="product.productId" name="productId" placeholder="Enter productId">
         </div>
     
-        <div class="form-group">
+        <div class="form-group py-1">
           <label for="productName">Product Name</label>
           <input type="text" class="form-control" name="productName" [(ngModel)]="product.productName" placeholder="Enter productName">
         </div>
     
-        <div class="form-group">
+        <div class="form-group py-1">
             <label for="categoryId">category Id</label>
             <input type="number" class="form-control" id="categoryId" [(ngModel)]="product.categoryId" name="categoryId" placeholder="Enter categoryId">
           </div>
     
-        <div class="mb-3">
+        <div class="mb-3 py-1">
             <label for="formFile" class="form-label">select file input example</label>
-            <input class="form-control" type="file" id="formFile" [(ngModel)]="product.productImage" name="productImage">
+            <input class="form-control" type="file" id="formFile" [(ngModel)]="product.productImage" name="file">
         </div>
                                                                                                                                                                                                      
     
-        <div class="form-group">
+        <div class="form-group py-1">
             <label for="productDescription">Product Description</label>
             <input type="text" class="form-control" style="height:100px;" name="productDescription" [(ngModel)]="product.productDescription" placeholder="Enter productDescription">
        </div>
