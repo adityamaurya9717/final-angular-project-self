@@ -1,0 +1,40 @@
+<header class="bg-dark d-flex p-3" style="position: relative;">
+    <h2 class="text-light">ShopIn</h2>
+     <div class="border bg-light justify-content-center d-flex border-corner"  style="margin-left: 10px;">
+         <select >
+            <option>All</option>
+            <option *ngFor="let o of options">{{o}}</option>
+         </select>
+     </div>
+    <input  type="search" style="width: 250px;" placeholder="Search For Products">
+    <button class="searchbutton"><i class="fa fa-search" style="font-size: 25px;"></i></button>
+   
+    <div class="d-flex justify-content-end" style="flex-grow: 1;" >
+        <!--profile button-->
+        <div class="d-flex" style="margin-right: 10px;" >
+          
+            <button  [ngClass]="{'btn-active':showDiv}"  class="orderbutton" style="padding: 0 5px;" (click)="show($event)" >MyProfile</button>
+            <div *ngIf="showDiv" class="d-flex flex-column show">
+                <a >Profile</a>
+                <a routerLink="logout">Logout</a>
+            </div>
+        </div>
+          <a class="orderbutton" routerLink="/user/user/products">Products</a>
+
+         <!-- Return and order button-->
+          <a class="orderbutton" style="margin-right: 10px;">
+             <span class="nav-line-1">Returns</span>
+             <span class="nav-line-2">& Orders</span>
+        </a>
+         <!-- Cart button-->
+        <a routerLink="/user/user/cart" class="orderbutton" title="cart">
+            <i class="fa fa-cart-plus" style="color: wheat;padding: 0;font-size: 30px;"></i>&nbsp;
+            <span style="font-size: 20px;color: white;"> Cart</span>
+        </a>
+        
+    </div>
+
+</header>
+
+<router-outlet></router-outlet>
+
