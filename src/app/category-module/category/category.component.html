@@ -1,0 +1,25 @@
+
+<div class="d-flex flex-row py-5" style="height:100vh;width: 100%;">
+    <div class="pt-2 border" style=" background-color:black;">
+        
+             
+           <a class="mt-1 " style="font-size:25px;color:white;width: 100%;" [routerLink]="['addcategory']" routerLinkActive="myactive">AddCategory</a><br>
+         <a class="mt-1"  style="font-size:25px;color:white" [routerLink]="['managecategory']" routerLinkActive="myactive">ManageCategory</a>
+
+    
+        
+    </div>
+
+    <div class="border" style="width:80%" >
+        <h1 class="text-center">Category Management</h1>
+        <router-outlet></router-outlet>
+        
+    </div>
+
+</div>    
+
+
+
+
+
+

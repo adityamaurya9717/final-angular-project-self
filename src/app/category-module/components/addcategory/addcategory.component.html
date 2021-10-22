@@ -3,12 +3,12 @@
 <form class="w-50 m-auto border p-2" [formGroup]="categoryForm" (ngSubmit)="addcategory()"> 
  <mat-form-field appearance="outline">
     <mat-label>Category Id</mat-label>
-    <input matInput type="number" id="category" formControlName="categoryId" name="categoryid" [(ngModel)]="category.id">
+    <input matInput type="number" id="category" formControlName="categoryId" name="categoryid" [(ngModel)]="category.categoryId">
   </mat-form-field>
   
   <mat-form-field appearance="outline">
     <mat-label>Category Name</mat-label>
-    <input matInput type="text" name="categoryname" formControlName="categoryName" [(ngModel)]="category.categoryname">
+    <input matInput type="text" name="categoryname" formControlName="categoryName" [(ngModel)]="category.categoryName">
   </mat-form-field>
    
   <div style="display: flex;flex-direction: row;justify-content:space-around">

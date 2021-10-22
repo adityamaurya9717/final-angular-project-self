@@ -8,7 +8,7 @@ import { CatalogService } from '../../service/catalog.service';
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.css'],
 })
-export class CatalogComponent implements OnInit {
+export class AddCatalogComponent implements OnInit {
   product:any = new Catalog();
   constructor(private catalogService: CatalogService) {}
 

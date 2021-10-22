@@ -1,1 +1,22 @@
-<p>categorymanagement works!</p>
+ 
+  <table class="table m-auto w-75">
+    <thead class="thead-light">
+      <tr>
+        
+        <th scope="col">Category Id</th>
+        <th scope="col">Category Name</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr *ngFor="let d of categories">
+           <td>{{d.categoryId}}</td>
+           <td>{{d.categoryName}}</td>
+           <td>
+               <button class="btn btn-primary" (click)="onEdit(d)">Edit</button> 
+               <button class="btn btn-danger" (click)="onRemove(d)">Remove</button> 
+
+           </td>
+       </tr> 
+    </tbody>
+  </table>

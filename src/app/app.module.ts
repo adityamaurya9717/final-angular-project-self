@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import { MaterialModuleModule } from './material-module/material-module.module';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CategoryModuleModule } from './category-module/category-module.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     BrowserAnimationsModule,
     MatInputModule,
     MaterialModuleModule,
+  
    
     AppRoutingModule,
     

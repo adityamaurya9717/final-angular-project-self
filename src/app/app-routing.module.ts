@@ -10,6 +10,11 @@ const routes: Routes = [
       loadChildren:()=>import('./core-module/core-module.module').then(m=>m.CoreModuleModule)
   },
 
+  {
+    path:'admin',
+    loadChildren:()=>import('./admin-module/admin-module.module').then(m=>m.AdminModuleModule)
+  },
+
 
    {
      path:'auth',
@@ -26,11 +31,8 @@ const routes: Routes = [
   {
     path:'catalog',
     loadChildren: ()=>import('./catalog-module/catalog-module.module').then(m=>m.CatalogModuleModule)
-  },
-  {
-    path:'category',
-    loadChildren: ()=>import('./category-module/category-module.module').then(m=>m.CategoryModuleModule)
   }
+   
 
 ];
 

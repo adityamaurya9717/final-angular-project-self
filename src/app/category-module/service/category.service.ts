@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
+const headerData={headers:{"Content-Type": "application/json"}}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,18 +13,18 @@ export class CategoryService {
    url="http://localhost:8080/category/"
 
   addCategory(category:any):Observable<any>{
-       return this.httpClient.post(this.url,category)
+       return this.httpClient.post(this.url,category,headerData)
   }
 
   getCategories():Observable<any>{
-    return this.httpClient.get(this.url)
+    return this.httpClient.get(this.url,headerData)
   }
   getCategoryById(id:number):Observable<any>{
-    return this.httpClient.get(this.url+id);
+    return this.httpClient.get(this.url+id,headerData);
   }
-  updateCategoryById(id:number, category:any):Observable<any>{
+  updateCategory(category:any):Observable<any>{
 
-    return this.httpClient.put(this.url+id, category)
+    return this.httpClient.put(this.url,category)
   }
 
   deleteCategoryById(id:number):Observable<any>{

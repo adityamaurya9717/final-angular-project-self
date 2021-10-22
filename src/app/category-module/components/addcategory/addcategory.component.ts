@@ -11,8 +11,8 @@ import { CategoryService } from '../../service/category.service';
 export class AddcategoryComponent implements OnInit {
     category:Category=new Category();
     categoryForm=this.fb.group({
-      categoryId:[this.category.id,Validators.required],
-      categoryName:[this.category.categoryname,Validators.required]
+      categoryId:[this.category.categoryId,Validators.required],
+      categoryName:[this.category.categoryName,Validators.required]
     })
 
     error:any={
@@ -27,7 +27,11 @@ export class AddcategoryComponent implements OnInit {
 
     if(this.categoryForm.valid ){
         console.log(this.category,this.categoryForm)
-        this.categoryService.addCategory(this.category).subscribe((res)=>{},(err)=>{})
+        this.categoryService.addCategory(this.category).subscribe((res)=>{
+           console.log(res)
+        },(err)=>{
+           console.log(err)
+        })
     }
     else{ console.log("input required")}    
   }
@@ -42,7 +46,7 @@ export class AddcategoryComponent implements OnInit {
 }
 
 class Category{
-  id:number | undefined;
-  categoryname:string | undefined;
+  categoryId:number | undefined;
+  categoryName:string | undefined;
   
 }

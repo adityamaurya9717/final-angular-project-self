@@ -1,12 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CatalogComponent } from './components/catalog/catalog.component';
+import { CatalogComponent } from './catalog/catalog.component';
+import { AddCatalogComponent } from './components/catalog/catalog.component';
 
 const routes: Routes = [
+
   {
-    path:'addcatalog',
-    component: CatalogComponent,
+    path:'catalog',
+    component:CatalogComponent,
+    children:[
+      {
+        path: 'addcatalog',
+        component:AddCatalogComponent,
+      }
+    ]
   }
+  
 ];
 
 @NgModule({

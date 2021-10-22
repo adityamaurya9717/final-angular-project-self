@@ -1,0 +1,12 @@
+li{
+
+    list-style-type: none;
+
+}
+a{
+    text-decoration:none !important;
+    padding: 10px;
+}
+.myactive{
+    background-color:burlywood;
+}

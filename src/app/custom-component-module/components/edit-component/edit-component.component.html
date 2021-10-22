@@ -1,0 +1,21 @@
+<div>
+  <h1 class="text-center">Edit Category</h1>
+    <form>
+        <div class="form-group my-2">
+          <label >Category ID</label>
+          <input type="number" [disabled]="true" class="form-control" name="categoryId" [(ngModel)]="newForm.categoryId" placeholder="Enter categorID">
+        </div>
+        <div class="form-group">
+          <label>Category Name</label>
+          <input type="text" class="form-control" name="categoryName" [(ngModel)]="newForm.categoryName" placeholder="Category Name">
+        </div>
+        
+        <div class="form-group my-3 d-flex " style="justify-content: space-between;">
+        <button type="button" class="btn btn-success" (click)="onSuccess()">update</button>
+        <button type="button" class="btn btn-danger " (click)="onCancel()">Cancel</button>
+        </div>
+      </form>
+  
+ 
+
+</div>
