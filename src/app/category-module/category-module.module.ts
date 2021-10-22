@@ -8,11 +8,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModuleModule } from '../material-module/material-module.module';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CategorymanagementComponent } from './components/categorymanagement/categorymanagement.component';
 
 @NgModule({
   declarations: [
     CategoryComponent,
-    AddcategoryComponent
+    AddcategoryComponent,
+    CategorymanagementComponent
   ],
   imports: [
     CommonModule,

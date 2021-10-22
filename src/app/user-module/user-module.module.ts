@@ -11,6 +11,8 @@ import { OrderComponent } from './components/order/order.component';
 import {HttpClientModule,HttpClient} from '@angular/common/http'
 import { SharedModule } from '../shared/shared.module';
 import { ProductComponent } from './components/product/product.component';
+import { ProductsComponent } from './components/products/products.component';
+
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { ProductComponent } from './components/product/product.component';
     UserComponent,
     CartComponent,
     OrderComponent,
-    ProductComponent
+    ProductComponent,
+    ProductsComponent
+
   ],
   imports: [
     CommonModule,
@@ -31,6 +35,7 @@ import { ProductComponent } from './components/product/product.component';
     SharedModule
     
   ],
+  providers: [ProductComponent],
   exports:[UserComponent,UserRoutingModule,LogoutComponent]
 })
 export class UserModuleModule { }

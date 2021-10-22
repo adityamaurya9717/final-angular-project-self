@@ -2,24 +2,22 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-product',
+  selector: 'product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit,AfterViewInit {
+export class ProductComponent implements OnInit {
 
 
-  constructor(private activatedRoute:ActivatedRoute,private route:Router) { 
-   console.log("routes",this.route.getCurrentNavigation()?.extras.state)
-
-  }
-  ngAfterViewInit(): void {
-    console.log(history.state)
+  constructor(private route: ActivatedRoute,private router: Router) { 
+   
 
   }
+  
 
   ngOnInit(): void {
-  console.log(history.state)
+  
+      console.log("product components")
 
   }
 

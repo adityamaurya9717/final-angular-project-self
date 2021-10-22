@@ -1,0 +1,42 @@
+<div class="w-75 m-auto border p-2">
+     <h1>Registration Form</h1>
+    <form  (ngSubmit)="doRegister()"  >
+
+        <div class="form-group" >
+          <label >User Id</label>
+          <input type="text" [ngClass]="{'error':error.userId==null && sub!=0}" class="form-control" id="userid" name="userId" [(ngModel)]="registerData.userId"  placeholder="Enter user id">
+            <p class="text-danger" >{{error.userId}}</p>
+        </div>
+
+        <div class="form-group">
+          <label >username</label>
+          <input type="text" [ngClass]="{'error':error.userName==null && sub!=0}"  [(ngModel)]="registerData.userName" class="form-control" id="username" name="userName" placeholder="Enter User name">
+          <p class="text-danger">{{error.userName}}</p>
+        </div>
+
+        <div class="form-group">
+            <label>password</label>
+            <input type="text" [ngClass]="{'error':error.password==null && sub!=0}"  [(ngModel)]="registerData.password" class="form-control" id="password" name="password"  placeholder=" Enter password">
+            <p class="text-danger">{{error.password}}</p>
+        </div>
+
+  
+          <div class="form-group">
+            <label >Enter Email</label>
+            <input type="text" [ngClass]="{'error':error.email==null && sub!=0}"  [(ngModel)]="registerData.email" class="form-control" id="email" name="email" placeholder="Enter email">
+            <p class="text-danger">{{error.email}}</p> 
+        </div>
+
+          <div>
+            <label >Enter Role</label>
+            <input type="number" [ngClass]="{'error':error.roleId==null && sub!=0}"  [(ngModel)]="registerData.roleId" class="form-control" id="email" name="roleId" placeholder="Enter role id">
+            <p class="text-danger">{{error.roleId}}</p>
+          </div>
+  
+
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-warning" (click)="clearForm()">Clear</button>
+
+      </form>
+</div>

@@ -6,8 +6,8 @@
             <option *ngFor="let o of options">{{o}}</option>
          </select>
      </div>
-    <input  type="search" style="width: 250px;" placeholder="Search For Products">
-    <button class="searchbutton"><i class="fa fa-search" style="font-size: 25px;"></i></button>
+    <input [(ngModel)]="searchItem" type="search"  style="width: 250px;" placeholder="Search For Products">
+    <button class="searchbutton"  (click)="searchProduct()"><i class="fa fa-search" style="font-size: 25px;"></i></button>
    
     <div class="d-flex justify-content-end" style="flex-grow: 1;" >
         <!--profile button-->
@@ -36,5 +36,5 @@
 
 </header>
 
-<router-outlet></router-outlet>
+
 

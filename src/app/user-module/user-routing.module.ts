@@ -6,32 +6,29 @@ import { UserComponent } from './user/user.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ProductComponent } from './components/product/product.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ProductsComponent } from './components/products/products.component';
 
 const secondRoutes:Routes=[
   {
   path:'user',
   component:UserComponent,
   children:[
-    {
-      path:'products',
-      component:ProductComponent,
+         {path:'products', component:ProductsComponent},
+         {path:'cart',component:CartComponent}
       
-    },
-    {
-      path:'logout',
-      component:LogoutComponent
-    },
-    {
-      path:'cart',
-      component:CartComponent
-    }
-  ]
-   
-  }
+        ]
+
+  },
   
   
   
 ]
+   
+  
+  
+  
+  
+
 
 @NgModule({
   declarations: [],
