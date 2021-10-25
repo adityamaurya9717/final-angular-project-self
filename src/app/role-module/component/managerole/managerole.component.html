@@ -1,0 +1,30 @@
+<div>
+<table class="table m-auto w-75 border"  >
+    <thead class="thead-light">
+      <tr>
+        
+        <th scope="col">Role Id</th>
+        <th scope="col">Role Name</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr  *ngFor="let r of roles">
+           <td>{{r.roleId}}</td>
+           <td>{{r.roleName}}</td>
+           <td>
+  
+    <button mat-raised-button (click)="updateRole(r)" > <i class="fas fa-edit"></i></button> 
+    
+      <button mat-stroked-button  (click)="deleteRole(r)">
+        <i class='fas fa-trash-alt' style='font-size:20px;color:red'></i>
+      </button> 
+
+           </td>
+       </tr> 
+    </tbody>
+  </table>
+  </div>
+
+
+

@@ -1,0 +1,42 @@
+
+  <table class="table m-auto"  >
+    <thead class="thead-light">
+      <tr>
+        
+        <th scope="col">Product Id</th>
+        <th scope="col">ProductName</th>
+        <th scope="col">CatagoryId</th>
+        <th scope="col">Details</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody style="overflow-y: auto;">
+       <tr *ngFor="let p of catalog;let i=index">
+           <td>{{p.productId}}</td>
+           <td>{{p.productName}}</td>
+           <td><p *ngIf="p.category!=null;else elseblock">{{p.category.categoryId}}</p><ng-template #elseblock> NULL</ng-template> </td>
+           <td><button (click)="detail(p)">Details</button></td>
+           <td>
+               <button class="btn" (click)="onEdit(p)"><i class="fas fa-edit"></i></button> 
+               <button class="btn" (click)="onRemove(i)" ><i class='fas fa-trash-alt' style='font-size:20px;color:red'></i></button> 
+           </td>
+       </tr> 
+    </tbody>
+  </table>
+
+  <!--pagination-->
+
+<nav class="pt-5" aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+

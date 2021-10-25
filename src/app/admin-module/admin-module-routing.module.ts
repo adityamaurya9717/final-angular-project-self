@@ -12,6 +12,14 @@ const routes: Routes = [
          {
            path:'category',
            loadChildren: ()=>import('../category-module/category-module.module').then(m=>m.CategoryModuleModule)
+         },
+         {
+           path:'catalog',
+           loadChildren: ()=>import('../catalog-module/catalog-module.module').then(m=>m.CatalogModuleModule)
+         },
+         {
+           path:'role',
+           loadChildren: ()=>import('../role-module/role-module.module').then(m=>m.RoleModuleModule)
          }
     ]
   },

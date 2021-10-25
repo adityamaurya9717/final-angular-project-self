@@ -13,7 +13,6 @@ import { CategoryModuleModule } from '../category-module/category-module.module'
   ],
   imports: [
     CommonModule,
-    CatalogModuleModule,
     AdminModuleRoutingModule
   ]
 })

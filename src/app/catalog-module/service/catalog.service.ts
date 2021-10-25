@@ -11,10 +11,18 @@ const headerData={headers: {'Content-Type': 'multipart/form-data'}}
 export class CatalogService {
   
   constructor(private httpClient:HttpClient) { }
-   url:string = 'http://localhost:8080/catalog/addcatalog'
+   url:string = 'http://localhost:8080/catalog/'
+
+   //add catalog
   addCatalog(catalog:any):Observable<any> {
     
-    return this.httpClient.post(this.url,catalog)
+    return this.httpClient.post(this.url+"addcatalog",catalog)
 
+  }
+
+  //get catalog
+  getCatalog():Observable<any> {
+
+    return this.httpClient.get(this.url,{headers: {'Content-Type':'application/json'}})
   }
 }

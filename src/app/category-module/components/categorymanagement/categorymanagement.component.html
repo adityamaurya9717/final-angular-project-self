@@ -1,5 +1,5 @@
  
-  <table class="table m-auto w-75">
+  <table class="table m-auto; " style="width: 100%;">
     <thead class="thead-light">
       <tr>
         
@@ -9,6 +9,9 @@
       </tr>
     </thead>
     <tbody>
+      <ng-container *ngIf="categories; then found ; else notfound"></ng-container>
+     
+      <ng-template #found>
        <tr *ngFor="let d of categories">
            <td>{{d.categoryId}}</td>
            <td>{{d.categoryName}}</td>
@@ -18,5 +21,13 @@
 
            </td>
        </tr> 
+       </ng-template>
+
+       <ng-template #notfound>
+
+          <h1 class="text-center text-danger">No categrious present</h1>
+         </ng-template>
+    
+      
     </tbody>
   </table>

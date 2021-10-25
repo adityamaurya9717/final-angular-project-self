@@ -1,3 +1,7 @@
 
-<p>catalog works!</p>
+<div class="d-flex flex-row  border bg-primary" style="justify-content:space-around" >
+<a [routerLink]="['addcatalog']" routerLinkActive="myactive">Add Catalog</a>
+<a [routerLink]="['managecatalog']" routerLinkActive="myactive">Manage Catalog</a>
+</div>
+
 <router-outlet></router-outlet>

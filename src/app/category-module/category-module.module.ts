@@ -11,6 +11,7 @@ import { CategorymanagementComponent } from './components/categorymanagement/cat
 import { CategoryComponent } from './category/category.component';
 import { CustomComponentModuleModule } from '../custom-component-module/custom-component-module.module';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CategoryService } from './service/category.service';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     ReactiveFormsModule,
     CustomComponentModuleModule,
     CategoryModuleRoutingModule
+  ],
+  providers: [
+    CategoryService
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
   

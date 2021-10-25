@@ -22,7 +22,7 @@ export class AddCatalogComponent implements OnInit {
         console.log(newForm);   
 
       let data=  new FormData(myform)
-
+         data.append("category",JSON.stringify({categoryId:1}))
       console.log(data);
 
         
