@@ -27,6 +27,13 @@ export class RoleService {
          getRoleByID(id:number):Observable<any>{
            return this.httpClient.get(this.url+id,headerData)
          }
+    //getRole By PAgination
+     getRoleByPaginations(pagenumber:number):Observable<any>{
+        let uri=this.url+"page/"+pagenumber;
+        //console.log(uri)
+      return this.httpClient.get(uri,headerData)
+
+     }
   
     //update role
       updateRole(role:any):Observable<any>{

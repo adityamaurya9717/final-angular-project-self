@@ -32,5 +32,12 @@
     
         
         <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-danger" (click)="clearForm()">clear</button>
+
       </form>
+
+      <div *ngIf="isUpdated">
+          <p>Updated Successfully</p>
+
+      </div>
       </div>

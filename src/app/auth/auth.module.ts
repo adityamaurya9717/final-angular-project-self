@@ -25,6 +25,7 @@ import { MaterialModuleModule } from '../material-module/material-module.module'
     MaterialModuleModule,
     
   ],
+  
   providers: [LoginService,RegisterService]
 })
 export class AuthModule { }

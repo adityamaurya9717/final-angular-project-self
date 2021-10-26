@@ -24,7 +24,18 @@
        </tr> 
     </tbody>
   </table>
-  </div>
+ <div class="w-100 ">
+  <nav class="border w-50 m-auto" aria-label="Page navigation example">
+    <ul class="pagination">
+      <button class="btn btn-secondary" (click)="onPrevious()">Previous</button>
+       
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <button class="btn btn-primary" (click)="onNext()">Next</button>
+    </ul>
+  </nav>
+</div>
 
 
 

@@ -10,9 +10,19 @@ import { CatalogService } from '../../service/catalog.service';
 })
 export class AddCatalogComponent implements OnInit {
   product:any = new Catalog();
+
+  isUpdated=false;
   constructor(private catalogService: CatalogService) {}
 
   ngOnInit(): void {}
+
+   clearForm(): void {
+     this.product=new Catalog();
+     this.isUpdated=false;
+   }
+
+
+
   addProduct() {
     var myform = document.forms[0]
     
@@ -22,7 +32,7 @@ export class AddCatalogComponent implements OnInit {
         console.log(newForm);   
 
       let data=  new FormData(myform)
-         data.append("category",JSON.stringify({categoryId:1}))
+         
       console.log(data);
 
         
@@ -35,6 +45,7 @@ export class AddCatalogComponent implements OnInit {
     this.catalogService.addCatalog(data).subscribe(
       (res) => {
          console.log(res)
+         this.isUpdated=true
       },
       (err) => {
         console.log(err)

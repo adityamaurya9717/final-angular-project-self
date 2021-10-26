@@ -1,13 +1,13 @@
 
-<div class="d-flex flex-row" style="width: 100%; height:100vh;">
+<div class="d-flex flex-row" style="width: 100%; height:100vh;padding: 0;">
    <!--sidebar--> 
   <div class="bg-secondary" style="width:15%;height:100vh;overflow: auto;border-left: 1px solid black;">
     <ul class="mt-5">
-      <li>Navigation</li>
-    <li><a [routerLink]="['category/category']">Category</a></li>
-    <li><a [routerLink]="['user']">Employee</a></li>
-    <li><a [routerLink]="['catalog/catalog']">Catalog</a></li>
-    <li><a [routerLink]="['role/role']">ROle</a></li>
+    <li>Navigation</li>
+    <li><a [routerLink]="['category/category']" routerLinkActive="myactive">Category</a></li>
+    <li><a [routerLink]="['user']" routerLinkActive="myactive">User</a></li>
+    <li><a [routerLink]="['catalog/catalog']" routerLinkActive="myactive">Catalog</a></li>
+    <li><a [routerLink]="['role/role']" routerLinkActive="myactive">ROle</a></li>
 
 
      </ul>

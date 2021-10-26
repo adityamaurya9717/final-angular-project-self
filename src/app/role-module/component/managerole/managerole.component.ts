@@ -15,11 +15,33 @@ export class ManageroleComponent implements OnInit {
   roles:any;
   error:any={}
 
+  next:number = 0;
+  previous:number = 0;
+
   constructor(private roleService: RoleService,public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.getRole()
+    //this.getRole()
+    this.getRoleByPaginations()
+   
   }
+
+  onPrevious(){
+    if(this.next>0){
+      this.next=this.next-1;
+    }
+    this.getRoleByPaginations();
+
+  }
+   onNext(){
+     this.next++;
+     this.getRoleByPaginations();
+
+   }
+
+
+
+
 //getRole
   getRole(){
 
@@ -29,6 +51,16 @@ export class ManageroleComponent implements OnInit {
       this.roles=res
     },
    (err)=>{console.log(err)})
+  }
+
+//get Role by PAgination
+  getRoleByPaginations(){
+    console.log(this.next)
+    this.roleService.getRoleByPaginations(this.next).subscribe(res=>{
+        console.log(res)
+        this.roles=res;
+    },(err)=>{
+      console.log(err)})
   }
 
 
@@ -42,7 +74,8 @@ export class ManageroleComponent implements OnInit {
             //console.log(updateRole)
              this.roleService.updateRole(updateRole).subscribe(res=>{
                  console.log("updated",res)
-                 this.getRole()
+                 //this.getRole()
+                 this.getRoleByPaginations()
              },(err)=>{console.log(err)})
             
          }

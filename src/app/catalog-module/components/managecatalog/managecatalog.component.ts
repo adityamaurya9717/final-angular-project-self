@@ -16,10 +16,8 @@ export class ManagecatalogComponent implements OnInit {
   constructor(private catalogService: CatalogService,public dialog: MatDialog) { }
 
   ngOnInit(): void {
-
-    this.catalogService.getCatalog()
-    .subscribe((res=>{console.log(res);this.catalog=res}),
-    (err)=>{console.log(err)})
+     this.getCatalog()
+    
   }
 
 
@@ -33,17 +31,56 @@ export class ManagecatalogComponent implements OnInit {
    onEdit(product:any){
      let dialogRef=this.dialog.open(EditComponent,{width:'550px',height:'550px',data:product})
 
+     dialogRef.afterClosed().subscribe(res=>{
+
+      console.log(res)
+
+     })
+
    }
 
    //onRemove()
-   onRemove(index:any){
+   onRemove(product:any){
     // let dialogRef=this.dialog.open(RemoveComponentComponent)
-     this.catalog=this.catalog.filter((d:any,i:any)=> {
+    /* this.catalog=this.catalog.filter((d:any,i:any)=> {
                                        if(i!=index) return d
-                                           })
+                                           })*/
      console.log(this.catalog)
+     let dialogRef=this.dialog.open(RemoveComponentComponent);
+     dialogRef.afterClosed().subscribe(res=>{
+       console.log(res)
+       if(res==true){
+         this.delete(product.productId)
+       }
+     })
+   }
+
+   //get catalog 
+   getCatalog(){
+    this.catalogService.getCatalog()
+    .subscribe((res=>{console.log(res);this.catalog=res}),
+    (err)=>{console.log(err)})
+   }
+
+   //update catalog from database
+
+   update(data:any){
+     this.catalogService.updatecatalog(data).subscribe(res=>{
+       console.log(res)
+     },(err)=>{console.log(err)})
 
    }
+
+   //delete catalog from database
+     delete(id:any){
+       this.catalogService.deleteCatalogById(id).subscribe(res=>{
+            if(res==="catalog deleted"){
+                this.getCatalog()
+            }
+       },(err)=>{console.log(err)})
+
+       
+     }
 
    
 

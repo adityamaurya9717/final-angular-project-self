@@ -25,4 +25,17 @@ export class CatalogService {
 
     return this.httpClient.get(this.url,{headers: {'Content-Type':'application/json'}})
   }
+
+  //updatecatalog
+
+  updatecatalog(data:any):Observable<any> {
+    return this.httpClient.put(this.url,data,headerData)
+  }
+
+  //delete catalog
+  deleteCatalogById(id:any):Observable<any> {
+
+    return this.httpClient.delete(this.url+id,{responseType:'text'})
+
+  }
 }

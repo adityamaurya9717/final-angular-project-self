@@ -17,8 +17,8 @@
            <td><p *ngIf="p.category!=null;else elseblock">{{p.category.categoryId}}</p><ng-template #elseblock> NULL</ng-template> </td>
            <td><button (click)="detail(p)">Details</button></td>
            <td>
-               <button class="btn" (click)="onEdit(p)"><i class="fas fa-edit"></i></button> 
-               <button class="btn" (click)="onRemove(i)" ><i class='fas fa-trash-alt' style='font-size:20px;color:red'></i></button> 
+               <button class="btn btn-primary" (click)="onEdit(p)"><i class="fas fa-edit"></i></button> 
+               <button class="btn btn-danger" (click)="onRemove(p)" ><i class='fas fa-trash-alt' style='font-size:20px;color:red'></i></button> 
            </td>
        </tr> 
     </tbody>
